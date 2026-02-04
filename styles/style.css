@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0..200");
+
+/*
+   MARK: ROOT / THEME
+*/
+
+:root {
+    --bg: oklab(20% 0 0);
+    --bg2: oklab(30% 0 0);
+    --bg3: oklab(40% 0 0);
+
+    --border: oklab(50% 0 0);
+
+    --fg: oklab(80% 0 0);
+    --fg2: oklab(90% 0 0);
+    --fg3: oklab(100% 0 0);
+
+    --accent: #3584e4;
+    --accent-hover: #4a94f0;
+
+    --radius-sm: 6px;
+    --radius: 12px;
+    --radius-lg: 18px;
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+
+    --color-pink:   #ff7fbf;
+    --color-purple:#d6a0ff;
+    --color-blue:  #8fa0ff;
+    --color-green: #9fff8f;
+    --color-yellow:#fff28f;
+    --color-orange:#ffbf7f;
+    --color-red:   #ff8f8f;
+
+    --color-pink-bg:   #4b3340;
+    --color-purple-bg:#453b4f;
+    --color-blue-bg:  #3c3f4f;
+    --color-green-bg: #3e4f3c;
+    --color-yellow-bg:#4f4d3c;
+    --color-orange-bg:#4f4033;
+    --color-red-bg:   #4f3a3a;
+
+    --font: "Ubuntu", system-ui, sans-serif;
+    --icon: "Material Symbols Rounded";
+}
+
+/*
+   MARK: BASE
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    line-height: 1.5;
+}
+
+.page {
+    padding: var(--space-5);
+}
+
+/*
+   MARK: TYPOGRAPHY
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 var(--space-3);
+    color: var(--fg3);
+    font-weight: 500;
+}
+
+p {
+    margin: 0 0 var(--space-3);
+}
+
+.small {
+    font-size: 0.85rem;
+    color: var(--fg2);
+}
+
+.muted {
+    color: var(--fg2);
+}
+
+/*
+   MARK: LINKS & ICONS
+*/
+
+a {
+    color: var(--fg2);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--fg3);
+    text-decoration: underline;
+}
+
+i {
+    font-style: normal;
+    font-family: var(--icon);
+    font-variation-settings: "FILL" 0, "wght" 400, "opsz" 24;
+}
+
+a.icon-anchor {
+    display: flex;
+    gap: var(--space-1);
+    align-items: center;
+    svg {
+        max-width: 32px;
+        max-height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        fill: var(--fg2);
+        * { fill: var(--fg2);
+            stroke: var(--fg3);
+        }
+    }
+}
+
+/*
+   MARK: LAYOUT UTILITIES
+*/
+
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.end {
+    justify-content: flex-end;
+}
+
+/* gaps */
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+
+/*
+   MARK: SIZING
+*/
+
+.w-all { width: 100%; }
+.w-100 { width: 100px; }
+.w-300 { width: 300px; }
+.w-400 { width: 400px; }
+.w-500 { width: 500px; }
+.w-600 { width: 600px; }
+.w-700 { width: 700px; }
+.w-1000 { width: 1000px; }
+.max-w-600 { max-width: 600px; }
+
+/*
+   MARK: SPACING UTILITIES
+*/
+
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-5 { padding: var(--space-5); }
+
+.m-2 { margin: var(--space-2); }
+.m-3 { margin: var(--space-3); }
+.m-4 { margin: var(--space-4); }
+
+.mt-3 { margin-top: var(--space-3); }
+.mb-3 { margin-bottom: var(--space-3); }
+
+/*
+   MARK: CONTAINERS
+*/
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-content {
+    padding: var(--space-4);
+    flex: 1; /* ✨ A MÁGICA */
+}
+
+.card-footer {
+    padding: var(--space-4);
+}
+
+.panel {
+    background-color: var(--bg3);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3);
+}
+
+/*
+   MARK: BUTTONS
+*/
+
+.btn {
+    appearance: none;
+    border: 1px solid var(--border);
+    background-color: var(--bg3);
+    color: var(--fg3);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn:hover {
+    background-color: var(--bg2);
+}
+
+.btn.primary {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn.primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+/*
+   MARK: INPUTS
+*/
+
+input,
+textarea,
+select {
+    background-color: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--fg3);
+    padding: var(--space-2);
+    font-family: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/*
+   MARK: GRID
+*/
+
+.grid {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+/*
+   MARK: MISC
+*/
+
+.divider {
+    height: 1px;
+    background-color: var(--border);
+    margin: var(--space-4) 0;
+}
+
+.rounded {
+    border-radius: var(--radius-lg);
+}
+
+.x-project-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-1);
+    margin-bottom: var(--space-2);
+}
+
+.x-project-card-tags .x-project-card-tag {
+    padding: 0px var(--space-2) 0px var(--space-2);
+    border-radius: 999px;
+}
+
+.x-project-card-tags .x-project-card-tag:nth-of-type(7n+1) {
+    background-color: var(--color-blue-bg);
+    color: var(--color-blue);
+}
+
+.x-project-card-tags .x-project-card-tag:nth-of-type(7n+2) {
+    background-color: var(--color-green-bg);
+    color: var(--color-green);
+}
+
+.x-project-card-tags .x-project-card-tag:nth-of-type(7n+3) {
+    background-color: var(--color-yellow-bg);
+    color: var(--color-yellow);
+}
+
+.x-project-card-tags .x-project-card-tag:nth-of-type(7n+4) {
+    background-color: var(--color-orange-bg);
+    color: var(--color-orange);
+}
+
+.x-project-card-tags .x-project-card-tag:nth-of-type(7n+5) {
+    background-color: var(--color-red-bg);
+    color: var(--color-red);
+}
+
+.x-project-card-tags .x-project-card-tag:nth-of-type(7n+6) {
+    background-color: var(--color-pink-bg);
+    color: var(--color-pink);
+}
+
+.x-project-card-tags .x-project-card-tag:nth-of-type(7n) {
+    background-color: var(--color-purple-bg);
+    color: var(--color-purple);
+}
