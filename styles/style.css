@@ -162,6 +162,12 @@ a.icon-anchor {
     justify-content: flex-end;
 }
 
+@media screen and (max-width: 700px) {
+    .mobile-column {
+        flex-direction: column;
+    }
+}
+
 /* gaps */
 .gap-1 { gap: var(--space-1); }
 .gap-2 { gap: var(--space-2); }
@@ -180,7 +186,17 @@ a.icon-anchor {
 .w-600 { width: 600px; }
 .w-700 { width: 700px; }
 .w-1000 { width: 1000px; }
+.max-w-100 { max-width: 100px; }
+.max-w-300 { max-width: 300px; }
+.max-w-400 { max-width: 400px; }
+.max-w-500 { max-width: 500px; }
 .max-w-600 { max-width: 600px; }
+.max-w-700 { max-width: 700px; }
+.max-w-1000 { max-width: 1000px; }
+
+@media screen and (max-width: 700px) {
+    .mobile-w-all {width: 100%; }
+}
 
 /*
    MARK: SPACING UTILITIES
